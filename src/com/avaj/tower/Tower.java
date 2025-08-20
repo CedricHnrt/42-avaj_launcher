@@ -7,8 +7,6 @@ import java.util.ArrayList;
 public class Tower {
     private List<Flyable> observers = new ArrayList<>();
 
-    public Tower() {}
-
     public void register(Flyable p_flyable) {
         this.observers.add(p_flyable);
         System.out.println("Tower says: " + p_flyable.toString() + "registered to weather tower.");
