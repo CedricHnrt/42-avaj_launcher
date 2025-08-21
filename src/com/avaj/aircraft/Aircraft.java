@@ -15,7 +15,7 @@ public class Aircraft extends Flyable {
 
     protected static long nextId() {
         if (idCounter == Long.MAX_VALUE) {
-            throw new IllegalStateException("Error: Maximum number of aircraft reached");
+            throw new IllegalStateException("Maximum number of aircraft reached.");
         }
         return ++idCounter;
     }
