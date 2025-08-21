@@ -24,7 +24,7 @@ MKDIR = @mkdir -p
 PRINT = @echo
 
 # Classe principale (modifiable à l'appel : make run MAIN=com.foo.Bar)
-MAIN ?= com.avaj.launcher.Main
+MAIN ?= com.avaj.simulation.Simulator
 
 # Sources Java (récursif)
 SOURCES := $(shell find $(SRC_DIR) -name "*.java")
