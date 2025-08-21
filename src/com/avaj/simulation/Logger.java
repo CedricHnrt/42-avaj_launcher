@@ -18,7 +18,7 @@ public class Logger {
             this.writer.write(message);
             this.writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error while writing to file: " + e.getMessage());
         }
     }
 
@@ -26,7 +26,7 @@ public class Logger {
         try {
             this.writer.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error while closing file: " + e.getMessage());
         }
     }
 
