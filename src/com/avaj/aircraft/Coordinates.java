@@ -1,9 +1,9 @@
 package com.avaj.aircraft;
 
 public class Coordinates {
-    private final int longitude;
-    private final int latitude;
-    private final int height;
+    private int longitude;
+    private int latitude;
+    private int height;
 
     Coordinates(int p_longitude, int p_latitude, int p_height) {
         if (p_longitude < 0) {
@@ -23,4 +23,14 @@ public class Coordinates {
     public int getLongitude() {return this.longitude;}
     public int getLatitude() {return this.latitude;}
     public int getHeight() {return this.height;}
+
+    public void modifyLongitude(int value) {
+        this.longitude = Math.max(this.longitude + value, 0);
+    }
+    public void modifyLatitude(int value) {
+        this.latitude =  Math.max(this.latitude + value, 0);
+    }
+    public void modifyHeight(int value) {
+        this.height = Math.max(Math.min(this.height + value, 100), 0);
+    }
 }
