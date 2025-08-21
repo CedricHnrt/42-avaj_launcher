@@ -1,5 +1,7 @@
 package com.avaj.aircraft;
 
+import java.io.IOException;
+
 public class Aircraft extends Flyable {
     protected long id;
     protected String name;
@@ -26,5 +28,5 @@ public class Aircraft extends Flyable {
     }
 
     @Override
-    public void updateConditions() {/*Useless but needed to respect diagram*/}
+    public void updateConditions() throws IOException {/*Useless but needed to respect diagram*/}
 }

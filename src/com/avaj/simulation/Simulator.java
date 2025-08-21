@@ -3,11 +3,13 @@ package com.avaj.simulation;
 import com.avaj.aircraft.AircraftFactory;
 import com.avaj.aircraft.Flyable;
 import com.avaj.tower.WeatherTower;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Simulator {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length == 0) {
             System.out.println("Usage: java Main <input_file>");
             return;
@@ -24,9 +26,11 @@ public class Simulator {
             Simulator.run(simulations, flyables, weatherTower);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
+        } finally {
+            Logger.getInstance().close();
         }
     }
-    public static void run(int simulations, List<Flyable> flyables, WeatherTower weatherTower) {
+    public static void run(int simulations, List<Flyable> flyables, WeatherTower weatherTower) throws IOException {
         for (Flyable flyable : flyables) {
             flyable.registerTower(weatherTower);
         }
